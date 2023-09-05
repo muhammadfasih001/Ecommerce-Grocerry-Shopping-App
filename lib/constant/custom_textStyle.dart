@@ -179,7 +179,7 @@ class CustomTextStyle11 {
   static TextStyle font11W800 = TextStyle(
     fontSize: 11,
     fontWeight: FontWeight.w800,
-    color: AppDarkColors.black100,
+    color: AppDarkColors.grey,
   );
 }
 

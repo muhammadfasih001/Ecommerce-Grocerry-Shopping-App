@@ -18,3 +18,11 @@ class AppColors {
   static Color orangeLite = const Color(0xffFFC83A);
   static Color textFieldColor = const Color(0xff153075);
 }
+
+class LabelPrice {
+  static Color black100 = Color(0xff1B262E);
+}
+
+class LabelDescription {
+  static Color grey = const Color(0xff616A7D);
+}

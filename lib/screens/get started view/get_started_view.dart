@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_groccery_app/constant/App.colors.dart';
 import 'package:flutter_groccery_app/constant/custom_textStyle.dart';
-import 'package:flutter_groccery_app/screens/get%20started%20view/grocerryHomePage/grocerry_home_page.dart';
+import 'package:flutter_groccery_app/screens/get%20started%20view/Bottom%20Navigation%20bar/curved_naviagtion.dart';
 import 'package:flutter_groccery_app/screens/get%20started%20view/widget/customButton1.dart';
 
 class GetStartedView extends StatefulWidget {
@@ -163,7 +163,7 @@ class _GetStartedViewState extends State<GetStartedView> {
                     Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => GrocerryHomeScreen(),
+                        builder: (context) => CurvedNavigationBottom(),
                       ),
                     );
                   },
