@@ -30,12 +30,31 @@ class _HomePageViewState extends State<HomePageView> {
           style: CustomTextStyle22.h1SemiBold22,
         ),
         actions: [
-          IconButton(
-            onPressed: () {},
-            icon: Icon(
-              Icons.shopping_bag_outlined,
-              size: 25,
-            ),
+          Stack(
+            children: [
+              Padding(
+                padding: EdgeInsets.only(top: 15),
+                child: IconButton(
+                  onPressed: () {},
+                  icon: Icon(
+                    Icons.shopping_bag_outlined,
+                    size: 28,
+                  ),
+                ),
+              ),
+              Positioned(
+                right: 6,
+                top: 20,
+                child: Container(
+                  height: 20,
+                  width: 20,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(50),
+                    color: Colors.amber,
+                  ),
+                ),
+              )
+            ],
           ),
         ],
       ),
