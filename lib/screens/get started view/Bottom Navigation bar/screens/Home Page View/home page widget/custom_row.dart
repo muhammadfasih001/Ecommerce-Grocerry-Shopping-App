@@ -29,24 +29,24 @@ class CustomRowUsdHrs extends StatelessWidget {
             children: [
               Text(
                 digitText,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 30,
                   fontWeight: FontWeight.w800,
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 width: 8,
               ),
               Text(
                 usdHrsText,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 30,
                   fontWeight: FontWeight.w300,
                 ),
               ),
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 5,
           ),
           Text(

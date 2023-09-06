@@ -17,10 +17,10 @@ class _CurvedNavigationBottomState extends State<CurvedNavigationBottom> {
   int _currentIndex = 0;
 
   final List<Widget> _screens = [
-    HomePageView(),
-    CategorriesPageView(),
-    FavouritePageView(),
-    MorePageView(),
+    const HomePageView(),
+    const CategorriesPageView(),
+    const FavouritePageView(),
+    const MorePageView(),
   ];
 
   _onTabTapped(int index) {

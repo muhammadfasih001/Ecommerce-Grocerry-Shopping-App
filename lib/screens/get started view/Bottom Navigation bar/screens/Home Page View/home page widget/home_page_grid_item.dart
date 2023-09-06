@@ -112,14 +112,13 @@ class _HomePageGridItemState extends State<HomePageGridItem> {
                       "${homePageGridItems.elementAt(index)["images"]}",
                       width: double.infinity,
                       height: 160,
-                      fit: BoxFit.scaleDown,
+                      fit: BoxFit.contain,
                     ),
                   ),
                   Padding(
                     padding: EdgeInsets.only(left: 14, right: 14),
                     child: Divider(
                       color: AppColors.blue,
-                      // height: 25,
                       thickness: 0.1,
                     ),
                   ),
@@ -134,7 +133,11 @@ class _HomePageGridItemState extends State<HomePageGridItem> {
                     padding: EdgeInsets.only(left: 15),
                     child: Text(
                       "${homePageGridItems.elementAt(index)["description"]}",
-                      style: CustomTextStyle14.h1SemiBold14,
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w600,
+                        color: AppDarkColors.grey,
+                      ),
                     ),
                   ),
                 ],

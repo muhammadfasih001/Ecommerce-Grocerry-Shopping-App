@@ -141,10 +141,7 @@ class CustomTextStyle16 {
 /*For 14px Size*/
 class CustomTextStyle14 {
   static TextStyle h1SemiBold14 = TextStyle(
-    fontSize: 14,
-    fontWeight: FontWeight.w600,
-    color: AppDarkColors.black100,
-  );
+      fontSize: 14, fontWeight: FontWeight.w600, color: AppDarkColors.grey);
 
   static TextStyle h1Medium14 = TextStyle(
     fontSize: 14,

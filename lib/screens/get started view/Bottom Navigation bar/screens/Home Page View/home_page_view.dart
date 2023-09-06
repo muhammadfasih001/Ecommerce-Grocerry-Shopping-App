@@ -36,7 +36,7 @@ class _HomePageViewState extends State<HomePageView> {
                 padding: EdgeInsets.only(top: 15),
                 child: IconButton(
                   onPressed: () {},
-                  icon: Icon(
+                  icon: const Icon(
                     Icons.shopping_bag_outlined,
                     size: 28,
                   ),
@@ -70,7 +70,7 @@ class _HomePageViewState extends State<HomePageView> {
               ),
               child: Column(
                 children: [
-                  Padding(
+                  const Padding(
                     padding: EdgeInsets.only(left: 22, right: 22),
                     child: CustomTextFiled1(),
                   ),
@@ -98,7 +98,7 @@ class _HomePageViewState extends State<HomePageView> {
                       ],
                     ),
                   ),
-                  Padding(
+                  const Padding(
                     padding: EdgeInsets.only(top: 5, left: 16, right: 10),
                     child: Row(
                       children: [
@@ -130,7 +130,7 @@ class _HomePageViewState extends State<HomePageView> {
                               Icons.keyboard_arrow_down,
                               color: Colors.white,
                             ),
-                            const SizedBox(
+                            SizedBox(
                               width: 8.0,
                             ),
                           ],
@@ -194,8 +194,8 @@ class _HomePageViewState extends State<HomePageView> {
             Padding(
               padding: EdgeInsets.only(left: 20),
               child: Text(
-                "Deals on Fruits & Tea",
-                style: CustomTextStyle20.h1Bold20,
+                "Recomended",
+                style: CustomTextStyle30.h1Regular30,
               ),
             ),
             const HomePageGridItem(),
