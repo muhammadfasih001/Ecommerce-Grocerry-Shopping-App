@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_groccery_app/constant/App.colors.dart';
 import 'package:flutter_groccery_app/constant/custom_textStyle.dart';
 import 'package:flutter_groccery_app/screens/get%20started%20view/Bottom%20Navigation%20bar/curved_navigation.dart';
@@ -13,10 +14,23 @@ class GetStartedView extends StatefulWidget {
 
 class _GetStartedViewState extends State<GetStartedView> {
   int activePage = 0;
-
   final PageController pageController = PageController(
     initialPage: 0,
   );
+
+  @override
+  void initState() {
+    super.initState();
+    SystemChrome.setSystemUIOverlayStyle(
+        SystemUiOverlayStyle(statusBarColor: AppColors.blue));
+  }
+
+  @override
+  void dispose() {
+    SystemChrome.setSystemUIOverlayStyle(
+        SystemUiOverlayStyle(statusBarColor: AppColors.blue));
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {

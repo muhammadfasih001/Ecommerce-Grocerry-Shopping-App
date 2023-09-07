@@ -27,7 +27,10 @@ class _CategorriesPageViewState extends State<CategorriesPageView> {
         actions: [
           IconButton(
             onPressed: () {},
-            icon: Icon(Icons.search),
+            icon: Icon(
+              Icons.search,
+              size: 28,
+            ),
           ),
           Stack(
             children: [
