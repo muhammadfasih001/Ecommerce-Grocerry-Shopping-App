@@ -102,7 +102,7 @@ class _CategorryPageGridItemState extends State<CategorryPageGridItem> {
         break;
       case 2:
         Navigator.push(context,
-            MaterialPageRoute(builder: (context) => const vegetablePage()));
+            MaterialPageRoute(builder: (context) => const VegetablePage()));
         break;
       case 3:
         Navigator.push(context,
@@ -135,7 +135,7 @@ class _CategorryPageGridItemState extends State<CategorryPageGridItem> {
         break;
       case 10:
         Navigator.push(context,
-            MaterialPageRoute(builder: (context) => const gamingChairPage()));
+            MaterialPageRoute(builder: (context) => const GamingChairPage()));
         break;
     }
   }

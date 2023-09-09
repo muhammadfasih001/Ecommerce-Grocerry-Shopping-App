@@ -13,7 +13,7 @@ class MyAppBar extends StatefulWidget implements PreferredSizeWidget {
   State<MyAppBar> createState() => _MyAppBarState();
 
   @override
-  Size get preferredSize => Size.fromHeight(kToolbarHeight);
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 }
 
 class _MyAppBarState extends State<MyAppBar> {
@@ -45,19 +45,38 @@ class _MyAppBarState extends State<MyAppBar> {
       actions: [
         IconButton(
           onPressed: () {},
-          icon: const Icon(
+          icon: Icon(
             Icons.search,
             color: Colors.black,
             size: 28,
           ),
         ),
-        IconButton(
-          onPressed: () {},
-          icon: const Icon(
-            Icons.shopping_bag_outlined,
-            color: Colors.black,
-            size: 28,
-          ),
+        Stack(
+          children: [
+            Padding(
+              padding: EdgeInsets.only(top: 15),
+              child: IconButton(
+                onPressed: () {},
+                icon: const Icon(
+                  Icons.shopping_bag_outlined,
+                  size: 28,
+                  color: Colors.black,
+                ),
+              ),
+            ),
+            Positioned(
+              right: 6,
+              top: 20,
+              child: Container(
+                height: 20,
+                width: 20,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(50),
+                  color: Colors.amber,
+                ),
+              ),
+            )
+          ],
         ),
       ],
     );

@@ -36,43 +36,43 @@ class _HomePageGridItemState extends State<HomePageGridItem> {
           "https://www.nicepng.com/png/full/98-983611_good-food-mart-california-almond-raw-packing-size.png",
     },
     {
-      "description": "Cookie Package 4 | 1 pack",
+      "description": "Cookie Package 5 | 1 pack",
       "price": "\$79",
       "images":
           "https://www.nicepng.com/png/full/79-794049_grandmas-cookies-variety-pack-36-count.png",
     },
     {
-      "description": "Chinees Noddles Package 5 | 1 pack",
+      "description": "Chinees Noddles Package 6 | 1 pack",
       "price": "\$50",
       "images":
           "https://www.nicepng.com/png/full/125-1255106_a-sichuan-favorite-this-popular-chinese-dish-features.png",
     },
     {
-      "description": "Cooking Oil Package 6 | 1 bundle",
+      "description": "Cooking Oil Package 7 | 1 bundle",
       "price": "\$100",
       "images":
           "https://www.nicepng.com/png/full/50-504966_our-range-of-cooking-oils-for-healthy-and.png",
     },
     {
-      "description": "Sauce Package 7 | 1 pack",
+      "description": "Sauce Package 8 | 1 pack",
       "price": "\$23",
       "images":
           "https://www.nicepng.com/png/full/100-1002870_2-bottles-of-fangs-chilli-sauce-chilli-sauce.png",
     },
     {
-      "description": "Vegetables Package 8 | 1 bundle",
+      "description": "Vegetables Package 9 | 1 bundle",
       "price": "\$12",
       "images":
           "https://www.nicepng.com/png/full/760-7607243_free-png-download-vegetables-png-images-background-organic.png",
     },
     {
-      "description": "Bag AW Package 9 | 1 pack",
+      "description": "Bag AW Package 10 | 1 pack",
       "price": "\$40",
       "images":
           "https://www.nicepng.com/png/full/385-3856719_premium-duffle-bag-bauer-premium-carry-bag-navy.png",
     },
     {
-      "description": "Apple Watch Package 10 | 1 bundle",
+      "description": "Apple Watch Package 11 | 1 bundle",
       "price": "\$200",
       "images":
           "https://www.nicepng.com/png/full/442-4425371_smartwatches-came-into-our-lives-like-smartphones-and.png",
