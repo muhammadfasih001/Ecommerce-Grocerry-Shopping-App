@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_groccery_app/constant/App.colors.dart';
 import 'package:flutter_groccery_app/constant/custom_textStyle.dart';
+import 'package:flutter_groccery_app/screens/get%20started%20view/Bottom%20Navigation%20bar/screens/Add%20To%20Cart%20Page%20View/Add%20to%20Cart%20Widget/add_to_cart_page.dart';
 import 'package:flutter_groccery_app/screens/get%20started%20view/Bottom%20Navigation%20bar/screens/Categories%20Page%20View/Categorries%20Page%20Widget/categorry_page_grid_item.dart';
+import 'package:flutter_groccery_app/screens/get%20started%20view/Bottom%20Navigation%20bar/screens/Home%20Page%20View/home_page_view.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class CategorriesPageView extends StatefulWidget {
@@ -37,7 +39,15 @@ class _CategorriesPageViewState extends State<CategorriesPageView> {
               Padding(
                 padding: EdgeInsets.only(top: 15),
                 child: IconButton(
-                  onPressed: () {},
+                  onPressed: () async {
+                    await Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => AddToCartPage(item: cartItems),
+                      ),
+                    );
+                    setState(() {});
+                  },
                   icon: Icon(
                     Icons.shopping_bag_outlined,
                     size: 28,
@@ -53,6 +63,16 @@ class _CategorriesPageViewState extends State<CategorriesPageView> {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(50),
                     color: Colors.amber,
+                  ),
+                  child: Center(
+                    //appbar
+                    child: Text(
+                      cartItems.length.toString(),
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
                   ),
                 ),
               )

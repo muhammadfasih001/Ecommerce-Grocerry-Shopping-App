@@ -1,90 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_groccery_app/constant/App.colors.dart';
 import 'package:flutter_groccery_app/constant/custom_textStyle.dart';
+import 'package:flutter_groccery_app/screens/get%20started%20view/Bottom%20Navigation%20bar/screens/Home%20Page%20View/home%20page%20widget/home_page_product_data.dart';
 
 class HomePageGridItem extends StatefulWidget {
-  const HomePageGridItem({super.key});
+  final Function(int) addToCartCallBack;
+
+  const HomePageGridItem({super.key, required this.addToCartCallBack});
 
   @override
   State<HomePageGridItem> createState() => _HomePageGridItemState();
 }
 
 class _HomePageGridItemState extends State<HomePageGridItem> {
-  final List<Map<String, dynamic>> homePageGridItems = [
-    {
-      "description": "Lemonade Package 1 | 1 bundle",
-      "price": "\$325",
-      "images":
-          "https://www.nicepng.com/png/full/31-313318_lemonade-fruits-png-clip-art-black-and-white.png",
-    },
-    {
-      "description": "Lipton Tea Package 2 | 1 bundle",
-      "price": "\$89",
-      "images":
-          "https://www.nicepng.com/png/full/499-4998897_lipton-tea-powder-instant-tea-drink-pack-100.png",
-    },
-    {
-      "description": "Brit Meat Package 3 | 1 bundle",
-      "price": "\$525",
-      "images":
-          "https://www.nicepng.com/png/full/1010-10101767_brit-pat-meat-corned-beef.png",
-    },
-    {
-      "description": "Almonds Package 4 | 1 bundle",
-      "price": "\$125",
-      "images":
-          "https://www.nicepng.com/png/full/98-983611_good-food-mart-california-almond-raw-packing-size.png",
-    },
-    {
-      "description": "Cookie Package 5 | 1 pack",
-      "price": "\$79",
-      "images":
-          "https://www.nicepng.com/png/full/79-794049_grandmas-cookies-variety-pack-36-count.png",
-    },
-    {
-      "description": "Chinees Noddles Package 6 | 1 pack",
-      "price": "\$50",
-      "images":
-          "https://www.nicepng.com/png/full/125-1255106_a-sichuan-favorite-this-popular-chinese-dish-features.png",
-    },
-    {
-      "description": "Cooking Oil Package 7 | 1 bundle",
-      "price": "\$100",
-      "images":
-          "https://www.nicepng.com/png/full/50-504966_our-range-of-cooking-oils-for-healthy-and.png",
-    },
-    {
-      "description": "Sauce Package 8 | 1 pack",
-      "price": "\$23",
-      "images":
-          "https://www.nicepng.com/png/full/100-1002870_2-bottles-of-fangs-chilli-sauce-chilli-sauce.png",
-    },
-    {
-      "description": "Vegetables Package 9 | 1 bundle",
-      "price": "\$12",
-      "images":
-          "https://www.nicepng.com/png/full/760-7607243_free-png-download-vegetables-png-images-background-organic.png",
-    },
-    {
-      "description": "Bag AW Package 10 | 1 pack",
-      "price": "\$40",
-      "images":
-          "https://www.nicepng.com/png/full/385-3856719_premium-duffle-bag-bauer-premium-carry-bag-navy.png",
-    },
-    {
-      "description": "Apple Watch Package 11 | 1 bundle",
-      "price": "\$200",
-      "images":
-          "https://www.nicepng.com/png/full/442-4425371_smartwatches-came-into-our-lives-like-smartphones-and.png",
-    },
-  ];
-
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.all(20),
       child: GridView.builder(
-        itemCount: homePageGridItems.length,
+        itemCount: homePageProductData.length,
         shrinkWrap: true,
         physics: const NeverScrollableScrollPhysics(),
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -109,7 +43,7 @@ class _HomePageGridItemState extends State<HomePageGridItem> {
                 children: [
                   ClipRRect(
                     child: Image.network(
-                      "${homePageGridItems.elementAt(index)["images"]}",
+                      "${homePageProductData.elementAt(index)["images"]}",
                       width: double.infinity,
                       height: 160,
                       fit: BoxFit.contain,
@@ -125,14 +59,14 @@ class _HomePageGridItemState extends State<HomePageGridItem> {
                   Padding(
                     padding: EdgeInsets.only(left: 15),
                     child: Text(
-                      "${homePageGridItems.elementAt(index)["price"]}",
+                      "${homePageProductData.elementAt(index)["price"]}",
                       style: CustomTextStyle18.h1Bold18,
                     ),
                   ),
                   Padding(
                     padding: EdgeInsets.only(left: 15),
                     child: Text(
-                      "${homePageGridItems.elementAt(index)["description"]}",
+                      "${homePageProductData.elementAt(index)["description"]}",
                       style: TextStyle(
                         fontSize: 14,
                         fontWeight: FontWeight.w600,
@@ -146,6 +80,9 @@ class _HomePageGridItemState extends State<HomePageGridItem> {
                 right: 15,
                 top: 160,
                 child: InkWell(
+                  onTap: () {
+                    widget.addToCartCallBack(index);
+                  },
                   child: CircleAvatar(
                     radius: 17,
                     backgroundColor: AppColors.blue,

@@ -108,70 +108,76 @@ class _FishPageState extends State<FishPage> {
             mainAxisExtent: 252,
           ),
           itemBuilder: (context, index) {
-            return Stack(
-              children: [
-                Container(
-                  width: 200,
-                  decoration: BoxDecoration(
-                    color: AppDarkColors.black10,
-                    borderRadius: BorderRadius.circular(10),
+            return InkWell(
+              //
+              child: Stack(
+                children: [
+                  Container(
+                    width: 200,
+                    decoration: BoxDecoration(
+                      color: AppDarkColors.black10,
+                      borderRadius: BorderRadius.circular(10),
+                    ),
                   ),
-                ),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    ClipRRect(
-                      child: Image.network(
-                        "${fishPageGridItems.elementAt(index)["images"]}",
-                        width: double.infinity,
-                        height: 160,
-                        fit: BoxFit.contain,
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      ClipRRect(
+                        child: Image.network(
+                          "${fishPageGridItems.elementAt(index)["images"]}",
+                          width: double.infinity,
+                          height: 160,
+                          fit: BoxFit.contain,
+                        ),
                       ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(left: 14, right: 14),
-                      child: Divider(
-                        color: AppColors.blue,
-                        thickness: 0.1,
+                      Padding(
+                        padding: EdgeInsets.only(left: 14, right: 14),
+                        child: Divider(
+                          color: AppColors.blue,
+                          thickness: 0.1,
+                        ),
                       ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(left: 15),
-                      child: Text(
-                        "${fishPageGridItems.elementAt(index)["price"]}",
-                        style: CustomTextStyle18.h1Bold18,
+                      Padding(
+                        padding: EdgeInsets.only(left: 15),
+                        child: Text(
+                          "${fishPageGridItems.elementAt(index)["price"]}",
+                          style: CustomTextStyle18.h1Bold18,
+                        ),
                       ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(left: 15),
-                      child: Text(
-                        "${fishPageGridItems.elementAt(index)["description"]}",
-                        style: TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.w600,
-                          color: AppDarkColors.grey,
+                      Padding(
+                        padding: EdgeInsets.only(left: 15),
+                        child: Text(
+                          "${fishPageGridItems.elementAt(index)["description"]}",
+                          style: TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.w600,
+                            color: AppDarkColors.grey,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Positioned(
+                    right: 15,
+                    top: 160,
+                    child: InkWell(
+                      onTap: () {
+                        //
+                      },
+                      child: CircleAvatar(
+                        radius: 17,
+                        backgroundColor: AppColors.blue,
+                        child: const Icon(
+                          Icons.add,
+                          color: Colors.white,
+                          size: 20,
                         ),
                       ),
                     ),
-                  ],
-                ),
-                Positioned(
-                  right: 15,
-                  top: 160,
-                  child: InkWell(
-                    child: CircleAvatar(
-                      radius: 17,
-                      backgroundColor: AppColors.blue,
-                      child: const Icon(
-                        Icons.add,
-                        color: Colors.white,
-                        size: 20,
-                      ),
-                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             );
           },
         ),
