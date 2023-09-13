@@ -13,6 +13,45 @@ class AddToCartPage extends StatefulWidget {
 }
 
 class _AddToCartPageState extends State<AddToCartPage> {
+//increase quanitity
+  increaseQuantity(int index) {
+    setState(() {
+      int currentQuantity = int.parse(widget.item[index]["quantity"]);
+      widget.item[index]["quantity"] = (currentQuantity + 1).toString();
+    });
+  }
+
+  //decrease Quantity
+  decreaseQuantity(int index) {
+    setState(() {
+      int currentQuantity = int.parse(widget.item[index]["quantity"]);
+      if (currentQuantity > 1) {
+        widget.item[index]["quantity"] = (currentQuantity - 1).toString();
+      }
+    });
+  }
+
+  double parsePrice(String price) {
+    return double.parse(price.replaceAll('\$', ''));
+  }
+
+  double calculateSubTotal() {
+    double subtotal = 0.00;
+    for (final cartItem in widget.item) {
+      double itemPrice = parsePrice(cartItem["price"]);
+      int quantity = int.parse(cartItem["quantity"]);
+      subtotal += itemPrice * quantity;
+    }
+    return subtotal;
+  }
+
+  double calculateTotal() {
+    double subtotal = calculateSubTotal();
+    double deliveryCharges =
+        20.0; // Change this to your actual delivery charges
+    return subtotal + deliveryCharges;
+  }
+
   @override
   void initState() {
     super.initState();
@@ -145,18 +184,167 @@ class _AddToCartPageState extends State<AddToCartPage> {
                               "${widget.item[index]["price"]}",
                               style: CustomTextStyle14.h1Regular14,
                             ),
-                            trailing: IconButton(
-                                onPressed: () {
-                                  //
-                                  setState(() {
-                                    widget.item.removeAt(index);
-                                  });
-                                },
-                                icon: Icon(Icons.delete)),
+                            trailing: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                InkWell(
+                                  splashColor: Colors.transparent,
+                                  onTap: () {
+                                    decreaseQuantity(index);
+                                  },
+                                  child: Container(
+                                    height: 40,
+                                    width: 40,
+                                    decoration: BoxDecoration(
+                                      color: AppDarkColors.black10,
+                                      borderRadius: BorderRadius.circular(20),
+                                    ),
+                                    child: Center(
+                                      child: Icon(
+                                        Icons.remove,
+                                        color: Colors.black,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                    horizontal: 10,
+                                  ),
+                                  child:
+                                      Text("${widget.item[index]["quantity"]}"),
+                                ),
+                                InkWell(
+                                  splashColor: Colors.transparent,
+                                  onTap: () {
+                                    increaseQuantity(index);
+                                  },
+                                  child: Container(
+                                    height: 40,
+                                    width: 40,
+                                    decoration: BoxDecoration(
+                                      color: AppDarkColors.black10,
+                                      borderRadius: BorderRadius.circular(20),
+                                    ),
+                                    child: Center(
+                                      child: Icon(
+                                        Icons.add,
+                                        color: Colors.black,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
                           );
                         },
                       ),
                     ),
+              BottomSheet(
+                enableDrag: false,
+                onClosing: () {},
+                builder: (context) {
+                  double subtotal = calculateSubTotal();
+                  double deliveryCharges =
+                      calculateTotal() - calculateSubTotal();
+                  double total = calculateTotal();
+
+                  return Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 8),
+                    child: Container(
+                      height: 195,
+                      decoration: BoxDecoration(
+                        color: AppDarkColors.black10,
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(30),
+                          topRight: Radius.circular(30),
+                        ),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 16, horizontal: 8),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 18),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    "Subtotal",
+                                    style: TextStyle(
+                                      fontSize: 14,
+                                      color: Colors.black,
+                                    ),
+                                  ),
+                                  Text(
+                                    '\$$subtotal',
+                                    style: TextStyle(
+                                      fontSize: 14,
+                                      color: Colors.black,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 18),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    "Delivery charges",
+                                    style: TextStyle(
+                                      fontSize: 14,
+                                      color: Colors.black,
+                                    ),
+                                  ),
+                                  Text(
+                                    '\$$deliveryCharges',
+                                    style: TextStyle(
+                                      fontSize: 14,
+                                      color: Colors.black,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 18),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    "Total",
+                                    style: TextStyle(
+                                      fontSize: 14,
+                                      color: Colors.black,
+                                    ),
+                                  ),
+                                  Text(
+                                    '\$$total',
+                                    style: TextStyle(
+                                      fontSize: 14,
+                                      color: Colors.black,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  );
+                },
+              ),
             ],
           ),
         ),
