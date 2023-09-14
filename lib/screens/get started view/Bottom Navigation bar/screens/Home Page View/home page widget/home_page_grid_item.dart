@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_groccery_app/constant/App.colors.dart';
 import 'package:flutter_groccery_app/constant/custom_textStyle.dart';
 import 'package:flutter_groccery_app/screens/get%20started%20view/Bottom%20Navigation%20bar/screens/Home%20Page%20View/home%20page%20widget/home_page_product_data.dart';
+import 'package:flutter_groccery_app/screens/get%20started%20view/Product%20detail%20Page%20View/lemonade_page.dart';
+import 'package:flutter_groccery_app/screens/get%20started%20view/Product%20detail%20Page%20View/lipton_tea_page.dart';
 
 class HomePageGridItem extends StatefulWidget {
   final Function(int) addToCartCallBack;
@@ -13,6 +15,56 @@ class HomePageGridItem extends StatefulWidget {
 }
 
 class _HomePageGridItemState extends State<HomePageGridItem> {
+  _navigateToProductPage(int index) {
+    switch (index) {
+      case 0:
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => LemonadePage()));
+        break;
+      case 1:
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => const LiptonTeaPage()));
+        break;
+      case 2:
+        // Navigator.push(context,
+        //     MaterialPageRoute(builder: (context) => const VegetablePage()));
+        break;
+      case 3:
+        // Navigator.push(context,
+        //     MaterialPageRoute(builder: (context) => const FruitPage()));
+        break;
+      case 4:
+        // Navigator.push(context,
+        //     MaterialPageRoute(builder: (context) => const CookingOilPage()));
+        break;
+      case 5:
+        // Navigator.push(context,
+        //     MaterialPageRoute(builder: (context) => const NikeShoePage()));
+        break;
+      case 6:
+        // Navigator.push(context,
+        //     MaterialPageRoute(builder: (context) => const PlaystationPage()));
+        break;
+      case 7:
+        // Navigator.push(context,
+        //     MaterialPageRoute(builder: (context) => const MensJacketPage()));
+        break;
+      case 8:
+        // Navigator.push(context,
+        //     MaterialPageRoute(builder: (context) => const HeadphonePage()));
+        break;
+
+      case 9:
+        // Navigator.push(
+        //     context, MaterialPageRoute(builder: (context) => const CapPage()));
+        break;
+      case 10:
+        // Navigator.push(context,
+        //     MaterialPageRoute(builder: (context) => const GamingChairPage()));
+        break;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -41,12 +93,17 @@ class _HomePageGridItemState extends State<HomePageGridItem> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  ClipRRect(
-                    child: Image.network(
-                      "${homePageProductData.elementAt(index)["images"]}",
-                      width: double.infinity,
-                      height: 160,
-                      fit: BoxFit.contain,
+                  InkWell(
+                    onTap: () {
+                      _navigateToProductPage(index);
+                    },
+                    child: ClipRRect(
+                      child: Image.network(
+                        "${homePageProductData.elementAt(index)["images"]}",
+                        width: double.infinity,
+                        height: 160,
+                        fit: BoxFit.contain,
+                      ),
                     ),
                   ),
                   Padding(

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_groccery_app/constant/App.colors.dart';
 import 'package:flutter_groccery_app/constant/custom_textStyle.dart';
+import 'package:flutter_groccery_app/screens/get%20started%20view/Bottom%20Navigation%20bar/screens/Add%20To%20Cart%20Page%20View/Add%20to%20Cart%20Widget/Checkout%20Page%20View/checkout_page_view.dart';
+import 'package:flutter_groccery_app/screens/get%20started%20view/Bottom%20Navigation%20bar/screens/Add%20To%20Cart%20Page%20View/Add%20to%20Cart%20Widget/add_to_cart_button.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AddToCartPage extends StatefulWidget {
@@ -190,11 +192,36 @@ class _AddToCartPageState extends State<AddToCartPage> {
                                 InkWell(
                                   splashColor: Colors.transparent,
                                   onTap: () {
+                                    setState(() {
+                                      widget.item.removeAt(index);
+                                    });
+                                  },
+                                  child: Container(
+                                    height: 35,
+                                    width: 35,
+                                    decoration: BoxDecoration(
+                                      color: AppDarkColors.black10,
+                                      borderRadius: BorderRadius.circular(20),
+                                    ),
+                                    child: Center(
+                                      child: Icon(
+                                        Icons.delete_outline,
+                                        color: Colors.black,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                InkWell(
+                                  splashColor: Colors.transparent,
+                                  onTap: () {
                                     decreaseQuantity(index);
                                   },
                                   child: Container(
-                                    height: 40,
-                                    width: 40,
+                                    height: 35,
+                                    width: 35,
                                     decoration: BoxDecoration(
                                       color: AppDarkColors.black10,
                                       borderRadius: BorderRadius.circular(20),
@@ -211,8 +238,12 @@ class _AddToCartPageState extends State<AddToCartPage> {
                                   padding: const EdgeInsets.symmetric(
                                     horizontal: 10,
                                   ),
-                                  child:
-                                      Text("${widget.item[index]["quantity"]}"),
+                                  child: Text(
+                                    "${widget.item[index]["quantity"]}",
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
                                 ),
                                 InkWell(
                                   splashColor: Colors.transparent,
@@ -220,8 +251,8 @@ class _AddToCartPageState extends State<AddToCartPage> {
                                     increaseQuantity(index);
                                   },
                                   child: Container(
-                                    height: 40,
-                                    width: 40,
+                                    height: 35,
+                                    width: 35,
                                     decoration: BoxDecoration(
                                       color: AppDarkColors.black10,
                                       borderRadius: BorderRadius.circular(20),
@@ -250,9 +281,9 @@ class _AddToCartPageState extends State<AddToCartPage> {
                   double total = calculateTotal();
 
                   return Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 8),
+                    padding: const EdgeInsets.symmetric(horizontal: 15),
                     child: Container(
-                      height: 195,
+                      height: 200,
                       decoration: BoxDecoration(
                         color: AppDarkColors.black10,
                         borderRadius: BorderRadius.only(
@@ -275,17 +306,11 @@ class _AddToCartPageState extends State<AddToCartPage> {
                                 children: [
                                   Text(
                                     "Subtotal",
-                                    style: TextStyle(
-                                      fontSize: 14,
-                                      color: Colors.black,
-                                    ),
+                                    style: CustomTextStyle14.h1SemiBold14,
                                   ),
                                   Text(
                                     '\$$subtotal',
-                                    style: TextStyle(
-                                      fontSize: 14,
-                                      color: Colors.black,
-                                    ),
+                                    style: CustomTextStyle16.h1Medium16,
                                   ),
                                 ],
                               ),
@@ -299,17 +324,11 @@ class _AddToCartPageState extends State<AddToCartPage> {
                                 children: [
                                   Text(
                                     "Delivery charges",
-                                    style: TextStyle(
-                                      fontSize: 14,
-                                      color: Colors.black,
-                                    ),
+                                    style: CustomTextStyle14.h1SemiBold14,
                                   ),
                                   Text(
                                     '\$$deliveryCharges',
-                                    style: TextStyle(
-                                      fontSize: 14,
-                                      color: Colors.black,
-                                    ),
+                                    style: CustomTextStyle16.h1Medium16,
                                   ),
                                 ],
                               ),
@@ -323,20 +342,25 @@ class _AddToCartPageState extends State<AddToCartPage> {
                                 children: [
                                   Text(
                                     "Total",
-                                    style: TextStyle(
-                                      fontSize: 14,
-                                      color: Colors.black,
-                                    ),
+                                    style: CustomTextStyle14.h1SemiBold14,
                                   ),
                                   Text(
                                     '\$$total',
-                                    style: TextStyle(
-                                      fontSize: 14,
-                                      color: Colors.black,
-                                    ),
+                                    style: CustomTextStyle16.h1Medium16,
                                   ),
                                 ],
                               ),
+                            ),
+                            AddToCartButton(
+                              text: "Proceed To checkout",
+                              backgroundColor: AppColors.blueDark,
+                              onPressed: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            CheckoutPageView()));
+                              },
                             ),
                           ],
                         ),
