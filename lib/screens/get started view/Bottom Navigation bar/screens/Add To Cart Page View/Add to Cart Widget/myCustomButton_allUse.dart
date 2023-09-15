@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_groccery_app/constant/App.colors.dart';
 
-class AddToCartButton extends StatelessWidget {
+class MyCustomButtonAllUse extends StatelessWidget {
   final String text;
   final Color backgroundColor;
   final VoidCallback onPressed;
 
-  const AddToCartButton(
+  const MyCustomButtonAllUse(
       {super.key,
       required this.text,
       required this.backgroundColor,
@@ -18,6 +18,7 @@ class AddToCartButton extends StatelessWidget {
       onTap: onPressed,
       child: Container(
         height: 65,
+        width: 330,
         decoration: BoxDecoration(
           color: backgroundColor,
           borderRadius:

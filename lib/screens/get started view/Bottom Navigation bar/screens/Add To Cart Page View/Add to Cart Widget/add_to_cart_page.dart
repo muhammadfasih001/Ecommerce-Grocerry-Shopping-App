@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_groccery_app/constant/App.colors.dart';
 import 'package:flutter_groccery_app/constant/custom_textStyle.dart';
 import 'package:flutter_groccery_app/screens/get%20started%20view/Bottom%20Navigation%20bar/screens/Add%20To%20Cart%20Page%20View/Add%20to%20Cart%20Widget/Checkout%20Page%20View/checkout_page_view.dart';
-import 'package:flutter_groccery_app/screens/get%20started%20view/Bottom%20Navigation%20bar/screens/Add%20To%20Cart%20Page%20View/Add%20to%20Cart%20Widget/add_to_cart_button.dart';
+import 'package:flutter_groccery_app/screens/get%20started%20view/Bottom%20Navigation%20bar/screens/Add%20To%20Cart%20Page%20View/Add%20to%20Cart%20Widget/myCustomButton_allUse.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AddToCartPage extends StatefulWidget {
@@ -351,7 +351,7 @@ class _AddToCartPageState extends State<AddToCartPage> {
                                 ],
                               ),
                             ),
-                            AddToCartButton(
+                            MyCustomButtonAllUse(
                               text: "Proceed To checkout",
                               backgroundColor: AppColors.blueDark,
                               onPressed: () {

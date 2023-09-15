@@ -19,7 +19,7 @@ class _CurvedNavigationBottomState extends State<CurvedNavigationBottom> {
   final List<Widget> _screens = [
     const HomePageView(),
     const CategorriesPageView(),
-    const FavouritePageView(),
+    FavouritePageView(favoriteItems: favItems),
     const MorePageView(),
   ];
 

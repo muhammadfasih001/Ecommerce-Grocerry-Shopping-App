@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_groccery_app/constant/App.colors.dart';
 import 'package:flutter_groccery_app/constant/custom_textStyle.dart';
 import 'package:flutter_groccery_app/screens/get%20started%20view/Bottom%20Navigation%20bar/screens/Add%20To%20Cart%20Page%20View/Add%20to%20Cart%20Widget/add_to_cart_page.dart';
+import 'package:flutter_groccery_app/screens/get%20started%20view/Bottom%20Navigation%20bar/screens/Home%20Page%20View/home%20page%20widget/home_page_product_data.dart';
 import 'package:flutter_groccery_app/screens/get%20started%20view/Bottom%20Navigation%20bar/screens/Home%20Page%20View/home_page_view.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class FavouritePageView extends StatefulWidget {
-  const FavouritePageView({super.key});
+  final List favoriteItems;
+  const FavouritePageView({super.key, required this.favoriteItems});
 
   @override
   State<FavouritePageView> createState() => _FavouritePageViewState();
@@ -110,6 +112,66 @@ class _FavouritePageViewState extends State<FavouritePageView> {
                   ),
                 ],
               ),
+            ),
+            ListView.builder(
+              shrinkWrap: true,
+              physics: NeverScrollableScrollPhysics(),
+              itemCount: widget.favoriteItems.length,
+              itemBuilder: (context, index) {
+                bool isFavorite = homePageProductData[index]["isFav"];
+                Color itemColor = isFavorite == true
+                    ? AppColors.orangeLite
+                    : AppDarkColors.black10;
+                return ListTile(
+                  leading: CircleAvatar(
+                    backgroundColor: Colors.transparent,
+                    radius: 25,
+                    child: Image.network(
+                      "${widget.favoriteItems[index]["images"]}",
+                    ),
+                  ),
+                  title: Text(
+                    "${widget.favoriteItems[index]["description"]}",
+                    style: CustomTextStyle14.h1Medium14,
+                  ),
+                  subtitle: Text(
+                    "${widget.favoriteItems[index]["price"]}",
+                    style: CustomTextStyle14.h1Regular14,
+                  ),
+                  trailing: InkWell(
+                    splashColor: Colors.transparent,
+                    onTap: () {
+                      setState(() {
+                        if (homePageProductData[index]["isFav"]) {
+                          // If it's already a favorite, remove it from favorites
+                          homePageProductData[index]["isFav"] = false;
+                          widget.favoriteItems
+                              .remove(homePageProductData[index]);
+                        } else {
+                          // If it's not a favorite, add it to favorites
+                          homePageProductData[index]["isFav"] = true;
+                          widget.favoriteItems.add(homePageProductData[index]);
+                        }
+                      });
+                    },
+                    child: Container(
+                      height: 40,
+                      width: 40,
+                      decoration: BoxDecoration(
+                        color: AppColors.blue,
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: Center(
+                        child: Icon(
+                          Icons.favorite,
+                          color: itemColor,
+                          size: 25,
+                        ),
+                      ),
+                    ),
+                  ),
+                );
+              },
             ),
           ],
         ),

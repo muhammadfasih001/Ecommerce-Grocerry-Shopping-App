@@ -10,6 +10,7 @@ import 'package:flutter_groccery_app/screens/get%20started%20view/Bottom%20Navig
 
 /*Global Cart Item List*/
 List cartItems = [];
+List favItems = [];
 
 class HomePageView extends StatefulWidget {
   const HomePageView({super.key});
@@ -239,6 +240,21 @@ class _HomePageViewState extends State<HomePageView> {
                 setState(
                   () {
                     cartItems.add(homePageProductData[index]);
+                  },
+                );
+              },
+              addToFavCallBack: (index) {
+                setState(
+                  () {
+                    if (homePageProductData[index]["isFav"] == true) {
+                      // If it's already a favorite, remove it from favorites
+                      homePageProductData[index]["isFav"] = false;
+                      favItems.remove(homePageProductData[index]);
+                    } else {
+                      // If it's not a favorite, add it to favorites
+                      homePageProductData[index]["isFav"] = true;
+                      favItems.add(homePageProductData[index]);
+                    }
                   },
                 );
               },

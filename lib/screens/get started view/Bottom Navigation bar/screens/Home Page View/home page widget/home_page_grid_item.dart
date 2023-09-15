@@ -7,8 +7,12 @@ import 'package:flutter_groccery_app/screens/get%20started%20view/Product%20deta
 
 class HomePageGridItem extends StatefulWidget {
   final Function(int) addToCartCallBack;
+  final Function(int) addToFavCallBack;
 
-  const HomePageGridItem({super.key, required this.addToCartCallBack});
+  const HomePageGridItem(
+      {super.key,
+      required this.addToCartCallBack,
+      required this.addToFavCallBack});
 
   @override
   State<HomePageGridItem> createState() => _HomePageGridItemState();
@@ -80,6 +84,10 @@ class _HomePageGridItemState extends State<HomePageGridItem> {
           mainAxisExtent: 252,
         ),
         itemBuilder: (context, index) {
+          bool isFavorite = homePageProductData[index]["isFav"];
+          Color itemColor =
+              isFavorite == true ? AppColors.orangeLite : AppDarkColors.black10;
+
           return Stack(
             children: [
               Container(
@@ -134,8 +142,8 @@ class _HomePageGridItemState extends State<HomePageGridItem> {
                 ],
               ),
               Positioned(
-                right: 15,
-                top: 160,
+                right: 14,
+                top: 165,
                 child: InkWell(
                   onTap: () {
                     widget.addToCartCallBack(index);
@@ -147,6 +155,24 @@ class _HomePageGridItemState extends State<HomePageGridItem> {
                       Icons.add,
                       color: Colors.white,
                       size: 20,
+                    ),
+                  ),
+                ),
+              ),
+              Positioned(
+                right: 60,
+                top: 165,
+                child: InkWell(
+                  onTap: () {
+                    widget.addToFavCallBack(index);
+                  },
+                  child: CircleAvatar(
+                    radius: 17,
+                    backgroundColor: AppColors.blue,
+                    child: Icon(
+                      Icons.favorite,
+                      color: itemColor,
+                      size: 25,
                     ),
                   ),
                 ),
