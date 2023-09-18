@@ -4,7 +4,7 @@ import 'package:flutter_groccery_app/constant/App.colors.dart';
 import 'package:flutter_groccery_app/screens/get%20started%20view/Bottom%20Navigation%20bar/screens/Categories%20Page%20View/categorries_page.dart';
 import 'package:flutter_groccery_app/screens/get%20started%20view/Bottom%20Navigation%20bar/screens/Favourite%20Page%20View/favourite_page.dart';
 import 'package:flutter_groccery_app/screens/get%20started%20view/Bottom%20Navigation%20bar/screens/Home%20Page%20View/home_page_view.dart';
-import 'package:flutter_groccery_app/screens/get%20started%20view/Bottom%20Navigation%20bar/screens/More%20Page%20View/more_page.dart';
+import 'package:flutter_groccery_app/screens/get%20started%20view/Bottom%20Navigation%20bar/screens/Order%20Page%20View/order_page.dart';
 
 class CurvedNavigationBottom extends StatefulWidget {
   const CurvedNavigationBottom({super.key});
@@ -20,7 +20,7 @@ class _CurvedNavigationBottomState extends State<CurvedNavigationBottom> {
     const HomePageView(),
     const CategorriesPageView(),
     FavouritePageView(favoriteItems: favItems),
-    const MorePageView(),
+    const OrderPageView(),
   ];
 
   _onTabTapped(int index) {
@@ -59,7 +59,7 @@ class _CurvedNavigationBottomState extends State<CurvedNavigationBottom> {
               color: Colors.white,
             ),
             Icon(
-              Icons.more_vert_outlined,
+              Icons.playlist_add_check,
               size: 30,
               color: Colors.white,
             ),

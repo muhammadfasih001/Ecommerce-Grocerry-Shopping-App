@@ -86,7 +86,7 @@ class _HomePageGridItemState extends State<HomePageGridItem> {
         itemBuilder: (context, index) {
           bool isFavorite = homePageProductData[index]["isFav"];
           Color itemColor =
-              isFavorite == true ? AppColors.orangeLite : AppDarkColors.black10;
+              isFavorite == true ? Colors.red : AppDarkColors.black10;
 
           return Stack(
             children: [

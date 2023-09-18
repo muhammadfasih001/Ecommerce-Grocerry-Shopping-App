@@ -133,7 +133,7 @@ class _AddToCartPageState extends State<AddToCartPage> {
                       Padding(
                         padding: const EdgeInsets.only(top: 15, left: 25),
                         child: Text(
-                          "Shopping Cart",
+                          "Shopping Cart (${widget.item.length.toString()})",
                           style: CustomTextStyle16.h1Medium16,
                         ),
                       ),
@@ -152,7 +152,7 @@ class _AddToCartPageState extends State<AddToCartPage> {
                     "Use code #HalalFood at Checkouut",
                     style: GoogleFonts.poppins(
                       textStyle: TextStyle(
-                        fontWeight: FontWeight.w400,
+                        fontWeight: FontWeight.w600,
                         fontSize: 16,
                       ),
                     ),
@@ -160,11 +160,30 @@ class _AddToCartPageState extends State<AddToCartPage> {
                 ),
               ),
               widget.item.isEmpty
-                  ? Center(
-                      child: Image.network(
-                        "https://cdn.dribbble.com/users/5107895/screenshots/14532312/media/a7e6c2e9333d0989e3a54c95dd8321d7.gif",
-                        height: 380,
-                      ),
+                  ? Column(
+                      children: [
+                        Center(
+                          child: Image.asset(
+                            "assets/images/empty.png",
+                            height: 230,
+                          ),
+                        ),
+                        Text(
+                          "Your Cart is empty",
+                          style: CustomTextStyle20.h1SemiBold20,
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Text(
+                          "Looks like you have not added anything to you cart\nGo ahead & explore top categories",
+                          style: CustomTextStyle14.h1Medium14,
+                          textAlign: TextAlign.center,
+                        ),
+                        SizedBox(
+                          height: 90,
+                        ),
+                      ],
                     )
                   : Padding(
                       padding: EdgeInsets.all(12),

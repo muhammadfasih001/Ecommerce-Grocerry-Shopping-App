@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_groccery_app/constant/App.colors.dart';
 import 'package:flutter_groccery_app/constant/custom_textStyle.dart';
 import 'package:flutter_groccery_app/screens/get%20started%20view/Bottom%20Navigation%20bar/screens/Add%20To%20Cart%20Page%20View/Add%20to%20Cart%20Widget/Checkout%20Page%20View/checkout%20page%20widget/myCustomAppBar_allUse.dart';
+import 'package:flutter_groccery_app/screens/get%20started%20view/Bottom%20Navigation%20bar/screens/Add%20To%20Cart%20Page%20View/Add%20to%20Cart%20Widget/Payment%20Page%20View/payment_page_view.dart';
 import 'package:flutter_groccery_app/screens/get%20started%20view/Bottom%20Navigation%20bar/screens/Add%20To%20Cart%20Page%20View/Add%20to%20Cart%20Widget/myCustomButton_allUse.dart';
 
 class AddCardPageVIew extends StatefulWidget {
@@ -262,7 +263,19 @@ class _AddCardPageVIewState extends State<AddCardPageVIew> {
                             text: "Make Payment",
                             backgroundColor: AppColors.blueDark,
                             onPressed: () {
-                              //  Navigator.push(context, MaterialPageRoute(builder: (context) => ))
+                              // Navigator.push(
+                              //   context,
+                              //   MaterialPageRoute(
+                              //     builder: (context) => PaymentPageView(),
+                              //   ),
+                              // );
+
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => PaymentPageView()),
+                              ).then((value) => Navigator.of(context)
+                                  .popUntil((route) => route.isFirst));
                             },
                           ),
                         ],
