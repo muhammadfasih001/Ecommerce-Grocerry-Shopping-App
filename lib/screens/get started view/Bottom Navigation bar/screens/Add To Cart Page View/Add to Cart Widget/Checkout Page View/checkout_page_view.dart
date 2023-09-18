@@ -6,6 +6,7 @@ import 'package:flutter_groccery_app/screens/get%20started%20view/Bottom%20Navig
 import 'package:flutter_groccery_app/screens/get%20started%20view/Bottom%20Navigation%20bar/screens/Add%20To%20Cart%20Page%20View/Add%20to%20Cart%20Widget/Checkout%20Page%20View/checkout%20page%20widget/Custom_container_TextFiled.dart';
 import 'package:flutter_groccery_app/screens/get%20started%20view/Bottom%20Navigation%20bar/screens/Add%20To%20Cart%20Page%20View/Add%20to%20Cart%20Widget/Checkout%20Page%20View/checkout%20page%20widget/myCustomAppBar_allUse.dart';
 import 'package:flutter_groccery_app/screens/get%20started%20view/Bottom%20Navigation%20bar/screens/Add%20To%20Cart%20Page%20View/Add%20to%20Cart%20Widget/myCustomButton_allUse.dart';
+import 'package:flutter_groccery_app/screens/get%20started%20view/Bottom%20Navigation%20bar/screens/Home%20Page%20View/home_page_view.dart';
 
 class CheckoutPageView extends StatefulWidget {
   const CheckoutPageView({super.key});
@@ -94,7 +95,8 @@ class _CheckoutPageViewState extends State<CheckoutPageView> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => AddCardPageVIew()));
+                          builder: (context) =>
+                              AddCardPageVIew(item: cartItems)));
                 },
               ),
             ),

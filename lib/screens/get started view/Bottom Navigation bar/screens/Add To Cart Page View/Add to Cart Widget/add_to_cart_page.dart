@@ -161,8 +161,8 @@ class _AddToCartPageState extends State<AddToCartPage> {
               ),
               widget.item.isEmpty
                   ? Center(
-                      child: Image.asset(
-                        "assets/images/empty.png",
+                      child: Image.network(
+                        "https://cdn.dribbble.com/users/5107895/screenshots/14532312/media/a7e6c2e9333d0989e3a54c95dd8321d7.gif",
                         height: 380,
                       ),
                     )

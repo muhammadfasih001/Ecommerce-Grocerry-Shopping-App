@@ -159,7 +159,7 @@ class _GetStartedViewState extends State<GetStartedView> {
                     // color: Colors.amber,
                   ),
                   child: Image.asset(
-                    "assets/images/logo.png",
+                    "assets/images/Catalogue.gif",
                     height: 270,
                     width: 270,
                   ),
