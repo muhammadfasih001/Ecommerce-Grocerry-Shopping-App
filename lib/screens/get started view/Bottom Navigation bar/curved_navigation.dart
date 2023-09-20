@@ -49,7 +49,7 @@ class _CurvedNavigationBottomState extends State<CurvedNavigationBottom> {
               color: Colors.white,
             ),
             Icon(
-              Icons.category_outlined,
+              Icons.grid_view_outlined,
               size: 30,
               color: Colors.white,
             ),
@@ -59,7 +59,7 @@ class _CurvedNavigationBottomState extends State<CurvedNavigationBottom> {
               color: Colors.white,
             ),
             Icon(
-              Icons.playlist_add_check,
+              Icons.shopping_bag_outlined,
               size: 30,
               color: Colors.white,
             ),
