@@ -167,7 +167,7 @@ class _AddCardPageVIewState extends State<AddCardPageVIew> {
                       keyboardType: TextInputType.number,
                       style: CustomTextStyle18.h1SemiBold18,
                       decoration: InputDecoration(
-                        hintText: "CV Number",
+                        hintText: "CVC Number",
                         hintStyle: const TextStyle(fontWeight: FontWeight.w400),
                         focusedBorder: UnderlineInputBorder(
                           borderSide: BorderSide(color: AppDarkColors.black45),
@@ -266,8 +266,10 @@ class _AddCardPageVIewState extends State<AddCardPageVIew> {
                                 MaterialPageRoute(
                                     builder: (context) =>
                                         const PaymentPageView()),
-                              ).then((value) => Navigator.of(context)
-                                  .popUntil((route) => route.isFirst));
+                              ).then(
+                                (value) => Navigator.of(context)
+                                    .popUntil((route) => route.isFirst),
+                              );
                             },
                           ),
                         ],

@@ -4,7 +4,13 @@ import 'package:flutter_groccery_app/constant/custom_textStyle.dart';
 
 class CustomContainerTextFeild extends StatelessWidget {
   final Color borderColor;
-  const CustomContainerTextFeild({super.key, required this.borderColor});
+  final String addressText;
+  final String hintText;
+  const CustomContainerTextFeild(
+      {super.key,
+      required this.borderColor,
+      required this.addressText,
+      required this.hintText});
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +39,7 @@ class CustomContainerTextFeild extends StatelessWidget {
                   padding:
                       const EdgeInsets.symmetric(vertical: 15, horizontal: 15),
                   child: Text(
-                    "Home",
+                    addressText,
                     style: CustomTextStyle18.h1Regular18,
                   ),
                 ),
@@ -64,7 +70,7 @@ class CustomContainerTextFeild extends StatelessWidget {
                       },
                       style: CustomTextStyle18.h1SemiBold18,
                       decoration: InputDecoration(
-                        hintText: "Enter you'r Adddress",
+                        hintText: hintText,
                         hintStyle: TextStyle(fontWeight: FontWeight.w400),
                         suffixText: "Edit",
                         suffixStyle:

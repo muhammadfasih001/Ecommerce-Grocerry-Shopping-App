@@ -48,11 +48,19 @@ class _CheckoutPageViewState extends State<CheckoutPageView> {
                 style: CustomTextStyle16.h1Regular16,
               ),
             ),
-            CustomContainerTextFeild(borderColor: AppColors.orange),
+            CustomContainerTextFeild(
+              borderColor: AppColors.orange,
+              addressText: "Home",
+              hintText: "Enter you'r Home Address",
+            ),
             const SizedBox(
               height: 30,
             ),
-            CustomContainerTextFeild(borderColor: AppDarkColors.black45),
+            CustomContainerTextFeild(
+              borderColor: AppDarkColors.black45,
+              addressText: "Office",
+              hintText: "Enter you'r Office Address",
+            ),
             SizedBox(
               height: 50,
             ),
