@@ -80,7 +80,7 @@ class _HomePageViewState extends State<HomePageView> {
                     color: Colors.amber,
                   ),
                   child: Center(
-                    //appbar
+                    //Appbar
                     child: Text(
                       cartItems.length.toString(),
                       style: TextStyle(
