@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_groccery_app/screens/get%20started%20view/get_started_view.dart';
+import 'package:flutter_groccery_app/screens/Onboarding%20View/get_started_view.dart';
 
 void main() {
   runApp(const MyApp());
