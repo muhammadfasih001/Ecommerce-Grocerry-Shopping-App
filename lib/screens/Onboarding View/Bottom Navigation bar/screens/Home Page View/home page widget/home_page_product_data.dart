@@ -50,7 +50,7 @@ List<Map<String, dynamic>> homePageProductData = [
     "ridername": "Michael"
   },
   {
-    "description": "Chinees Noddles",
+    "description": "Noddles",
     "price": "\$50",
     "images":
         "https://www.nicepng.com/png/full/125-1255106_a-sichuan-favorite-this-popular-chinese-dish-features.png",
