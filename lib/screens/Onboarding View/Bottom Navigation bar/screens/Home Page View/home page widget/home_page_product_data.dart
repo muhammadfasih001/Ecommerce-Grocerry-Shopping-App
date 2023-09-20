@@ -100,7 +100,7 @@ List<Map<String, dynamic>> homePageProductData = [
     "ridername": "Alexander"
   },
   {
-    "description": "Apples",
+    "description": "Apple Watch",
     "price": "\$200",
     "images":
         "https://www.nicepng.com/png/full/442-4425371_smartwatches-came-into-our-lives-like-smartphones-and.png",

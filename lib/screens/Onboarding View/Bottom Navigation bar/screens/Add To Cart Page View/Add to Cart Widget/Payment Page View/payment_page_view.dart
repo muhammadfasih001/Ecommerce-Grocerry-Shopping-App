@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_groccery_app/constant/App.colors.dart';
+import 'package:flutter_groccery_app/constant/custom_textStyle.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class PaymentPageView extends StatefulWidget {
   const PaymentPageView({super.key});
@@ -28,6 +30,32 @@ class _PaymentPageViewState extends State<PaymentPageView> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppDarkColors.black1,
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Image.asset(
+            "assets/images/payment.gif",
+            width: 380,
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 50),
+            child: Text(
+              "Your payment was",
+              style: GoogleFonts.manrope(
+                fontSize: 30,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+          Text(
+            "Successfully",
+            style: GoogleFonts.manrope(
+              fontSize: 30,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

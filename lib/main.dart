@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_groccery_app/screens/Onboarding%20View/get_started_view.dart';
+import 'package:flutter_groccery_app/screens/Onboarding%20View/onboarding_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +17,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: GetStartedView(),
+      home: OnboardingView(),
     );
   }
 }

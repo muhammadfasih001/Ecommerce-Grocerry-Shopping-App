@@ -4,6 +4,7 @@ import 'package:flutter_groccery_app/constant/App.colors.dart';
 import 'package:flutter_groccery_app/constant/custom_textStyle.dart';
 import 'package:flutter_groccery_app/screens/Onboarding%20View/Bottom%20Navigation%20bar/screens/Home%20Page%20View/home%20page%20widget/home_page_product_data.dart';
 import 'package:flutter_groccery_app/screens/Onboarding%20View/Bottom%20Navigation%20bar/screens/Home%20Page%20View/home_page_view.dart';
+import 'package:flutter_groccery_app/screens/Onboarding%20View/Bottom%20Navigation%20bar/screens/Track%20Order%20View/track_order_view.dart';
 import 'package:flutter_groccery_app/screens/Onboarding%20View/Product%20detail%20Page%20View/Product%20Widget/product_detail_button_2.dart';
 
 class OrderPageView extends StatefulWidget {
@@ -58,7 +59,7 @@ class _OrderPageViewState extends State<OrderPageView> {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 50, horizontal: 10),
+          padding: const EdgeInsets.only(top: 50, left: 15, right: 15),
           child: Column(
             children: [
               ListView.builder(
@@ -180,7 +181,11 @@ class _OrderPageViewState extends State<OrderPageView> {
                                 ProductDetailCustomButton2(
                                   text: "Track Order",
                                   onPressed: () {
-                                    // Navigator.push(context, MaterialPageRoute(builder: (context) => ));
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                TrackOrderView()));
                                   },
                                 ),
                               ],

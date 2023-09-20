@@ -116,14 +116,9 @@ class _FavouritePageViewState extends State<FavouritePageView> {
             widget.favoriteItems.isEmpty
                 ? Column(
                     children: [
-                      Center(
-                        child: Padding(
-                          padding: const EdgeInsets.only(top: 70),
-                          child: Image.asset(
-                            "assets/images/fvempty.png",
-                            height: 230,
-                          ),
-                        ),
+                      Image.network(
+                        "https://media0.giphy.com/media/0HhDnlH89djZtRqYoO/giphy.gif?cid=6c09b952v2qplzygq5871ii8uf74a6geqdm2zq40zo4jsnm8&ep=v1_internal_gif_by_id&rid=giphy.gif&ct=s",
+                        height: 290,
                       ),
                       Text(
                         "Your Favourite List is empty",

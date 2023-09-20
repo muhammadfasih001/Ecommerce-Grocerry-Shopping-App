@@ -4,17 +4,15 @@ import 'package:flutter_groccery_app/constant/App.colors.dart';
 import 'package:flutter_groccery_app/constant/custom_textStyle.dart';
 import 'package:flutter_groccery_app/screens/Onboarding%20View/Bottom%20Navigation%20bar/curved_navigation.dart';
 import 'package:flutter_groccery_app/screens/Onboarding%20View/widget/customButton1.dart';
-// import 'package:flutter_groccery_app/screens/get%20started%20view/Bottom%20Navigation%20bar/curved_navigation.dart';
-// import 'package:flutter_groccery_app/screens/get%20started%20view/widget/customButton1.dart';
 
-class GetStartedView extends StatefulWidget {
-  const GetStartedView({super.key});
+class OnboardingView extends StatefulWidget {
+  const OnboardingView({super.key});
 
   @override
-  State<GetStartedView> createState() => _GetStartedViewState();
+  State<OnboardingView> createState() => _OnboardingViewState();
 }
 
-class _GetStartedViewState extends State<GetStartedView> {
+class _OnboardingViewState extends State<OnboardingView> {
   int activePage = 0;
   final PageController pageController = PageController(
     initialPage: 0,
@@ -67,13 +65,13 @@ class _GetStartedViewState extends State<GetStartedView> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                "Your holiday\nshopping\ndelivered to Screen",
+                                "You'r Groceries\nWithout Stress at",
                                 style: CustomTextStyle30.h1Bold30,
                               ),
                               Row(
                                 children: [
                                   Text(
-                                    "One",
+                                    "Home",
                                     style: CustomTextStyle30.h1Bold30,
                                   ),
                                   SizedBox(
@@ -83,10 +81,10 @@ class _GetStartedViewState extends State<GetStartedView> {
                                 ],
                               ),
                               SizedBox(
-                                height: 40,
+                                height: 30,
                               ),
                               Text(
-                                "There's something for everyone to enjoy with Sweet Shop Favourites Screen 1",
+                                "Shop from a wide selection of grocery item from topbrands withover 80.000 items on our online supermarket....",
                                 style: CustomTextStyle18.h1Medium18,
                               ),
                             ],
@@ -100,13 +98,13 @@ class _GetStartedViewState extends State<GetStartedView> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                "Your holiday\nshopping\ndelivered to Screen",
+                                "Amazing Discounts\n& offers Speedy at",
                                 style: CustomTextStyle30.h1Bold30,
                               ),
                               Row(
                                 children: [
                                   Text(
-                                    "Two",
+                                    "Doorstep",
                                     style: CustomTextStyle30.h1Bold30,
                                   ),
                                   SizedBox(
@@ -119,7 +117,7 @@ class _GetStartedViewState extends State<GetStartedView> {
                                 height: 30,
                               ),
                               Text(
-                                "There's something for everyone to enjoy with Sweet Shop Favourites Screen 2",
+                                "Cheaper prices than you'r local supermarket, great discounts and cashback offers to top it off....",
                                 style: CustomTextStyle18.h1Medium18,
                               ),
                             ],
