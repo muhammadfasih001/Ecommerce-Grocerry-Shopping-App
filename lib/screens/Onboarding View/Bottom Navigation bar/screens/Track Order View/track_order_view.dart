@@ -152,21 +152,16 @@ class TrackOrderView extends StatelessWidget {
                           ),
                         ),
                       ),
-                      Row(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.only(left: 20, top: 30),
-                            child: Text(
+                      Padding(
+                        padding: EdgeInsets.only(left: 20, top: 30, right: 20),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
                               "Order Details",
                               style: CustomTextStyle16.h1SemiBold16,
                             ),
-                          ),
-                          const Padding(
-                            padding: const EdgeInsets.only(
-                              top: 30,
-                              left: 20,
-                            ),
-                            child: Text(
+                            Text(
                               "(ID: #765433)",
                               style: TextStyle(
                                 fontSize: 14,
@@ -174,8 +169,24 @@ class TrackOrderView extends StatelessWidget {
                                 color: Color(0xff616A7D),
                               ),
                             ),
-                          ),
-                        ],
+                            Container(
+                              height: 28,
+                              width: 95,
+                              decoration: BoxDecoration(
+                                color: AppDarkColors.black20,
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              child: Center(
+                                child: Text("Success",
+                                    style: TextStyle(
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.w700,
+                                      color: AppColors.blue,
+                                    )),
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ],
                   ),
