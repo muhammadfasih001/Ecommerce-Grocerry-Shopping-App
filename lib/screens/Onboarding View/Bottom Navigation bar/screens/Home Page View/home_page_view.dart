@@ -11,6 +11,7 @@ import 'package:flutter_groccery_app/screens/Onboarding%20View/Bottom%20Navigati
 /*Global Cart Item List*/
 List cartItems = [];
 List favItems = [];
+List orderItem = [];
 
 class HomePageView extends StatefulWidget {
   const HomePageView({super.key});

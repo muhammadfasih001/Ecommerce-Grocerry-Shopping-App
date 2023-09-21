@@ -159,7 +159,7 @@ class _HeadphonePageState extends State<HeadphonePage> {
                 ),
                 Positioned(
                   right: 15,
-                  top: 170,
+                  top: 166,
                   child: InkWell(
                     child: CircleAvatar(
                       radius: 17,

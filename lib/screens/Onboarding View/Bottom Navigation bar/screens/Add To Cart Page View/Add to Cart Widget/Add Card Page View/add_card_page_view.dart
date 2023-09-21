@@ -5,6 +5,7 @@ import 'package:flutter_groccery_app/constant/custom_textStyle.dart';
 import 'package:flutter_groccery_app/screens/Onboarding%20View/Bottom%20Navigation%20bar/screens/Add%20To%20Cart%20Page%20View/Add%20to%20Cart%20Widget/Checkout%20Page%20View/checkout%20page%20widget/myCustomAppBar_allUse.dart';
 import 'package:flutter_groccery_app/screens/Onboarding%20View/Bottom%20Navigation%20bar/screens/Add%20To%20Cart%20Page%20View/Add%20to%20Cart%20Widget/Payment%20Page%20View/payment_page_view.dart';
 import 'package:flutter_groccery_app/screens/Onboarding%20View/Bottom%20Navigation%20bar/screens/Add%20To%20Cart%20Page%20View/Add%20to%20Cart%20Widget/myCustomButton_allUse.dart';
+import 'package:flutter_groccery_app/screens/Onboarding%20View/Bottom%20Navigation%20bar/screens/Home%20Page%20View/home_page_view.dart';
 
 class AddCardPageVIew extends StatefulWidget {
   final List item;
@@ -270,6 +271,10 @@ class _AddCardPageVIewState extends State<AddCardPageVIew> {
                                 (value) => Navigator.of(context)
                                     .popUntil((route) => route.isFirst),
                               );
+                              setState(() {
+                                orderItem.addAll(cartItems);
+                                cartItems.clear();
+                              });
                             },
                           ),
                         ],

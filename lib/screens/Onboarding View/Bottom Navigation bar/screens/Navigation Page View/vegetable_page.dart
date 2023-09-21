@@ -157,7 +157,7 @@ class _VegetablePageState extends State<VegetablePage> {
                 ),
                 Positioned(
                   right: 15,
-                  top: 160,
+                  top: 166,
                   child: InkWell(
                     child: CircleAvatar(
                       radius: 17,

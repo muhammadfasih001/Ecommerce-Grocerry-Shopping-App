@@ -8,7 +8,8 @@ import 'package:flutter_groccery_app/screens/Onboarding%20View/Bottom%20Navigati
 import 'package:flutter_groccery_app/screens/Onboarding%20View/Product%20detail%20Page%20View/Product%20Widget/product_detail_button_2.dart';
 
 class OrderPageView extends StatefulWidget {
-  const OrderPageView({super.key});
+  final List orderList;
+  const OrderPageView({super.key, required this.orderList});
 
   @override
   State<OrderPageView> createState() => _OrderPageViewState();
@@ -65,7 +66,7 @@ class _OrderPageViewState extends State<OrderPageView> {
               ListView.builder(
                 shrinkWrap: true,
                 physics: NeverScrollableScrollPhysics(),
-                itemCount: cartItems.length,
+                itemCount: orderItem.length,
                 itemBuilder: (context, index) {
                   return Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -76,8 +77,8 @@ class _OrderPageViewState extends State<OrderPageView> {
                           CircleAvatar(
                             radius: 32,
                             backgroundColor: Colors.transparent,
-                            child:
-                                Image.network("${cartItems[index]["images"]}"),
+                            child: Image.network(
+                                "${widget.orderList[index]["images"]}"),
                           ),
                           const SizedBox(
                             width: 15,
@@ -88,7 +89,7 @@ class _OrderPageViewState extends State<OrderPageView> {
                               Padding(
                                 padding: const EdgeInsets.only(top: 10),
                                 child: Text(
-                                  "${cartItems[index]["description"]}",
+                                  "${widget.orderList[index]["description"]}",
                                   style: CustomTextStyle16.h1SemiBold16,
                                 ),
                               ),
@@ -96,7 +97,7 @@ class _OrderPageViewState extends State<OrderPageView> {
                                 height: 5,
                               ),
                               Text(
-                                "${cartItems[index]["price"]}",
+                                "${widget.orderList[index]["price"]}",
                                 style: CustomTextStyle16.h1SemiBold16,
                               ),
                             ],
@@ -119,7 +120,6 @@ class _OrderPageViewState extends State<OrderPageView> {
                               Container(
                                 height: 185,
                                 width: 150,
-                                // color: Colors.amber,
                                 child: Padding(
                                   padding: const EdgeInsets.only(left: 20),
                                   child: CircleAvatar(
@@ -171,7 +171,7 @@ class _OrderPageViewState extends State<OrderPageView> {
                             child: Column(
                               children: [
                                 Text(
-                                  "Your ${cartItems[index]["description"]}",
+                                  "Your ${widget.orderList[index]["description"]}",
                                   style: CustomTextStyle20.h1Regular20,
                                 ),
                                 Text(

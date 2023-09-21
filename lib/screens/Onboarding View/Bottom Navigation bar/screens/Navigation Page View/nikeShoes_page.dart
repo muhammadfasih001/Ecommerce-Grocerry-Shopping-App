@@ -159,7 +159,7 @@ class _NikeShoePageState extends State<NikeShoePage> {
                 ),
                 Positioned(
                   right: 15,
-                  top: 160,
+                  top: 166,
                   child: InkWell(
                     child: CircleAvatar(
                       radius: 17,

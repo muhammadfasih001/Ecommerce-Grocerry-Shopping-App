@@ -14,7 +14,10 @@ class ListTileDelivery extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      leading: iconDeliver,
+      leading: Padding(
+        padding: const EdgeInsets.only(top: 8),
+        child: iconDeliver,
+      ),
       title: Text(
         title,
         style: TextStyle(

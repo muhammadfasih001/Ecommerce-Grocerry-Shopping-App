@@ -24,8 +24,8 @@ class CustomTextFiled1 extends StatelessWidget {
             border: InputBorder.none,
             hintText: "Search Product or store",
             hintStyle: TextStyle(
-              color: AppDarkColors.grey,
-              fontSize: 14,
+              color: AppDarkColors.black20,
+              fontSize: 15,
             ),
             prefixIcon: const Icon(
               Icons.search,

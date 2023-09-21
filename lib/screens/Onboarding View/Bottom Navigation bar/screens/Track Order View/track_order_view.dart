@@ -54,7 +54,7 @@ class TrackOrderView extends StatelessWidget {
                     top: 370,
                     child: Container(
                       height: 75,
-                      width: 350,
+                      width: 370,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(50),
                         color: AppDarkColors.black10,
@@ -111,18 +111,16 @@ class TrackOrderView extends StatelessWidget {
                 ],
               ),
             ),
-            ListTileDelivery(
+            const ListTileDelivery(
               iconDeliver: Icon(
                 Icons.access_time,
-                size: 26,
               ),
               title: "Delivery In",
               subTitle: "20 Min",
             ),
-            ListTileDelivery(
+            const ListTileDelivery(
               iconDeliver: Icon(
                 Icons.location_on_outlined,
-                size: 26,
               ),
               title: "Delivery Address",
               subTitle: "37 New line, Sunamganj",
@@ -163,7 +161,7 @@ class TrackOrderView extends StatelessWidget {
                               style: CustomTextStyle16.h1SemiBold16,
                             ),
                           ),
-                          Padding(
+                          const Padding(
                             padding: const EdgeInsets.only(
                               top: 30,
                               left: 20,

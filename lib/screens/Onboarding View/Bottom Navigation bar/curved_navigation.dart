@@ -20,7 +20,7 @@ class _CurvedNavigationBottomState extends State<CurvedNavigationBottom> {
     const HomePageView(),
     const CategorriesPageView(),
     FavouritePageView(favoriteItems: favItems),
-    const OrderPageView(),
+    OrderPageView(orderList: orderItem),
   ];
 
   _onTabTapped(int index) {
