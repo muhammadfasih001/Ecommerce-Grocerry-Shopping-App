@@ -17,7 +17,7 @@ class _SplashViewState extends State<SplashView> {
   @override
   initState() {
     super.initState();
-    Timer(Duration(seconds: 3), () {
+    Timer(Duration(seconds: 1), () {
       Navigator.pushReplacement(context,
           MaterialPageRoute(builder: (context) => const OnboardingView()));
     });
