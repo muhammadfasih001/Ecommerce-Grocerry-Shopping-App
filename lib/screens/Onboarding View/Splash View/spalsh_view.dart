@@ -39,7 +39,7 @@ class _SplashViewState extends State<SplashView> {
             ),
           ),
           Text(
-            "Little Shop",
+            "Little Shops",
             style: GoogleFonts.manrope(
               fontSize: 50,
               fontWeight: FontWeight.bold,
